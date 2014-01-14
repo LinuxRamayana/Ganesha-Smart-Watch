@@ -1,0 +1,22 @@
+<!-- <header class="black">
+	<i class="icon ion-ios7-bell" style="float: left; padding-left: 10px; padding-top: 2px;"></i>
+	<small current-time="hourFormat"></small>
+	<i class="icon ion-battery-full" style="float: right; padding-right: 10px; padding-top: 2px;"></i>
+</header> -->
+<div ng-show="!editing">
+	<section class="main-content">
+		<p class="yellow">Title:</p>
+		<input type="text" placeholder="Title" ng-model="note.title" ng-click="editField('title', 'text')">
+		<p class="yellow">Note:</p>
+		<div class="row">
+			<textarea class="col span_3_3" placeholder="Content" ng-model="note.content" style="padding: 0 6px" ng-click="editField('content', 'text')"></textarea>
+		</div>
+	</section>
+	<footer class="gray row">
+	    <div class="col span_2_4" ng-click="back()"><i class="icon ion-close yellow"></i></div>
+		<div class="col span_2_4"><i class="icon ion-checkmark yellow" ng-click="add(note)"></i></div>
+	</footer>
+</div>
+<div ng-show="editing">
+	<div keyboard="" message="note[editable]" type="{{ fieldType }}" return="editing"></div>
+</div>

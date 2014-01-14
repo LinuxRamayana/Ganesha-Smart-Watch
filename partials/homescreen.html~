@@ -1,0 +1,24 @@
+<!-- <header class="">
+    <i class="icon ion-ios7-bell" style="float: left; padding-left: 10px; padding-top: 2px;"></i>
+    <small current-time="hourFormat"></small>
+    <i class="icon ion-battery-full" style="float: right; padding-right: 10px; padding-top: 2px;"></i>
+</header> -->
+<section class="main-content no-footer">
+    <div ng-switch on="menu">  
+    	<div class="menu-icon"  ng-switch-when="launcher">
+            <a href="#" data-menu="Launcher"></a>
+        </div>	      
+        <div class="menu-icon"  ng-switch-when="events">
+            <a href="#/events" data-menu="Events"></a>
+        </div>
+        <div class="menu-icon" ng-switch-when="tasks">
+            <a href="#/tasks" data-menu="Tasks"></a>
+        </div>
+        <div class="menu-icon" ng-switch-when="notes">
+            <a href="#/notes" data-menu="Notes"></a>
+        </div>
+        <div class="menu-icon" ng-switch-when="settings">
+            <a href="#/settings" data-menu="Settings"></a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,39 @@
+<!-- <header class="black">
+	<i class="icon ion-ios7-bell" style="float: left; padding-left: 10px; padding-top: 2px;"></i>
+	<small current-time="hourFormat"></small>
+	<i class="icon ion-battery-full" style="float: right; padding-right: 10px; padding-top: 2px;"></i>
+</header> -->
+<div ng-show="!editing" ng-hide="hasNotification">
+	<section class="main-content">
+		<p class="red">Name:</p>
+	    <input type="text" placeholder="Event name" value="{{ evt.name }}" ng-model="evt.name" ng-click="editField('name', 'text')">
+		<p class="red">Date:</p>
+	    <input type="date" placeholder="Event date" value="{{ evt.date }}" ng-model="evt.date" ng-click="editField('date', 'date')">
+		<p class="red">Frequency:</p>
+		<select id="select-edit">
+			<option value="none">None</option>
+			<option value="daily">Daily</option>
+			<option value="weekly">Weekly</option>
+			<option value="monthly">Monthly</option>
+			<option value="yearly">Yearly</option>
+	 	</select>
+		<small>&#x25bc;</small>
+		<p class="red">Time:</p>
+	    <input type="time" value="{{ evt.time }}" ng-model="evt.time" ng-click="editField('time', 'time')">
+		<p class="red">Location:</p>
+	    <input type="text" placeholder="Event location" value="{{ evt.place }}" ng-model="evt.place" ng-click="editField('place', 'text')">
+		<p class="red">Notifications:</p>
+		<small ng-show="evt.notification === 0" style="padding: 10px 5px; line-height: 30px; cursor: pointer;" ng-click="hasNotification = true"><i class="ion-plus"></i> Add notification</small>
+		<small ng-show="evt.notification > 0" style="padding: 10px 5px; line-height: 30px; cursor: pointer;" ng-click="hasNotification = true">{{ evt.notification }} minutes before</small>
+	</section>
+	<footer class="gray row">
+	    <div class="col span_2_4" ng-click="back()"><i class="icon ion-close red"></i></div>
+		<div class="col span_2_4" ng-click="save(evt)"><i class="icon ion-checkmark red"></i></div>
+	</footer>
+</div>
+<div ng-show="editing">
+	<div keyboard="" message="evt[editable]" type="{{ fieldType }}" return="editing"></div>
+</div>
+<div ng-show="hasNotification">
+	<div notification-times="" option="evt.notification" return="hasNotification"></div>
+</div>

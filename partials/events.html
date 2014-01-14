@@ -1,0 +1,11 @@
+<section class="main-content">
+    <ul>
+        <div ng-repeat="(day, evts) in events">
+            <li class="list-divider red">{{ day | moment }}</li>
+            <li ng-repeat="event in evts" ng-click="selectEvent(event)"><small class="red-light">{{ event.time }}</small>{{ event.name }}</li>
+        </div>
+    </ul>
+</section>
+<footer class="gray row">
+    <a class="col span_3_3" href="#/events/add"><i class="icon ion-plus red"></i></a>
+</footer>
